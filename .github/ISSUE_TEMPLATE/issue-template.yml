@@ -1,0 +1,97 @@
+name: issue forms example
+description: "Example of GitHub's new feature: issue forms"
+title: "[ST99]: "
+labels: []
+assignees:
+  - yoko-kaneko
+body:
+  - type: markdown
+    attributes:
+      value: |
+        templateに従って記入してください。（登録者向けのメッセージ）
+  - type: dropdown
+    id: type-1
+    attributes:
+      label: Type
+      description: |
+        issueの種類を指定してください。
+      options:
+        - bug
+        - task
+        - enhancement
+        - proposal
+    validations:
+      required: true
+  - type: dropdown
+    id: priority-1
+    attributes:
+      label: Priority
+      description: |
+        優先度を指定してください。
+      options:
+        - S:critical
+        - A:major
+        - B:minor
+        - C:trivial
+    validations:
+      required: true
+  - type: dropdown
+    id: component-1
+    attributes:
+      label: Component
+      description: |
+        機能を指定してください。
+      options:
+        - 01_メイン
+        - 02_各種設定
+        - 03_エクスポート
+      multiple: true
+    validations:
+      required: true
+  - type: input
+    id: version-1
+    attributes:
+      label: Version
+      description: "発生バージョン"
+      placeholder: 発生バージョン
+    validations:
+      required: false
+  - type: input
+    id: hours-plan-1
+    attributes:
+      label: 予定時間
+      description: "作業時間の予定"
+      placeholder: [h]
+    validations:
+      required: false
+  - type: input
+    id: hours-actual-1
+    attributes:
+      label: 実績時間
+      description: "作業時間の実績"
+      placeholder: [h]
+    validations:
+      required: false
+  - type: checkboxes
+    id: targetbranch-1
+    attributes:
+      label: Target Branch
+      description: "対象のbranch"
+      options:
+        - label: common
+        - label: pkg-n
+          required: true
+        - label: pkg
+  - type: textarea
+    id: content-1
+    attributes:
+      label: Content
+      description: 内容
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-1
+    attributes:
+      label: "再現手順"
+      description: "再現手順"
+      render: csharp
